@@ -1,10 +1,10 @@
 import logging
 import os
 import sys
-import threading
 
 import discord
-from colorama import Fore, Style
+from colorama import Fore
+from loader import loader
 from discord.ext import commands
 
 # Enviroment Settings
@@ -15,7 +15,6 @@ logging.basicConfig(level=logging.INFO,
   format='\033[1m %(asctime)s %(levelname)s \033[0m    %(message)s', 
   datefmt=Fore.LIGHTBLACK_EX+'%Y-%m-%d %H:%M:%S'+Fore.RESET)  
 logging.info(Fore.BLUE + f"Xyrdron Pty Ltd\nMikuBOT")
-logging.info(Fore.BLUE+'Connecting to Discord')
 
 # Bot Startup
 @bot.event
@@ -23,25 +22,23 @@ async def on_ready():
     logging.info(Fore.GREEN+'Connected to Discord')
 
     # Cogs
-    logging.info(Fore.BLUE+'Loading commands')
+    cogcount = len([f for f in os.listdir('cogs') if os.path.isfile(os.path.join('cogs', f))])
+    logging.info(Fore.BLUE+f'Loading cogs [{cogcount} to load]')
+    cog_success = 0
+    cog_skipped = 0
+    cog_failed = 0
     for filename in os.listdir('cogs'):
         if filename.endswith(".py"):
             cog_name = filename[:-3]
-            cog_module = f"cogs.{cog_name}"
-
-            try:
-                if cog_name not in bot.cogs:
-                    logging.info(Fore.BLUE+'Loading '+cog_module)
-                    if cog_name == 'example-cog':
-                        logging.info(Fore.YELLOW+f'Skipped {cog_name}')
-                    else:
-                        await bot.load_extension(cog_module)
-                    logging.info(Fore.GREEN+'Loaded ' + cog_module)
-            except Exception as e:
-                logging.critical(Fore.RED+f'Failed to load {cog_module} {e}')
-                logging.critical(Fore.RED+'Failed to complete boot sequence due to exception')
-                sys.exit('Failed to complete boot sequence due to exception')
-    logging.info(Fore.GREEN+'Loaded all commands')
+            result = await loader(bot,'load',cog_name)
+            if result == 0:
+                cog_success =+ 1
+            elif result == 1:
+                cog_skipped =+ 1
+            else:
+                cog_failed =+ 1
+            
+    logging.info(Fore.GREEN+f'Loaded cogs [{cog_success} loaded, {cog_skipped} skipped, {cog_failed} failed]')
 
 
     # Syncing
@@ -70,10 +67,10 @@ async def on_ready():
 
 def run():
     # IMPORTANT
-    # TO ALL CONTRIBUTERS
-    # PLEASE USE YOUR OWN BOT TOKEN
-    # CREATE .vscode/launch.json and add your token as an env
+    # TO ALL CONTRIBUTORS, PLEASE USE YOUR OWN BOT TOKEN FOR STAGING
+    # CREATE A VSCODE LAUNCH CONFIGURATION AND ADD YOUR TOKEN AS AN ENV
     # .vscode is gitignored so you do not need to remove it (however just to be safe you should remove it on commit)
+    logging.info(Fore.BLUE+'Connecting to Discord')
     bot.run(os.environ['RELEASE_BOT_SECRET'])
 
 if __name__ == '__main__':
