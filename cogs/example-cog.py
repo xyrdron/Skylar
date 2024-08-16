@@ -8,10 +8,10 @@ class example(commands.Cog):
     self._last_member = None
 
     # this is what a regular slash command would look like in a cog
-    @commands.hybrid_command(name="test1", description="test command!")
-    async def test(self,ctx):
-        await ctx.defer() # this defers the command execution and will display "bot is thinking" to the user
-        await ctx.send("pong")
+  @commands.hybrid_command(name="test1", description="test command!")
+  async def test(self,ctx):
+    await ctx.defer() # this defers the command execution and will display "bot is thinking" to the user
+    await ctx.send("pong")
 
 def setup(client):
   return client.add_cog(example(client))
