@@ -1,8 +1,8 @@
-# Tiramisu: Your Egirl Companion!
+# Trixie: Your Egirl Companion!
 
 > [!WARNING]
 > YES YES I KNOW THIS WAS SUPPOSED TO BE A HATSUNE MIKU DISCORD BOT
 > BUT I THINK EGIRL THEME WOULD HAVE A BETTER REACH
 > SO WE REBRANDED LMFAO
 
-> Project TSX by Xyrdron Pty Ltd
+> Project TX by Xyrdron Pty Ltd
