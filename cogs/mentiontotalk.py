@@ -9,6 +9,8 @@ from discord.ext import commands, tasks
 
 import openai
 from openai import OpenAI
+from uwuipy import uwuipy
+uwu = uwuipy.Uwuipy(None, 0.057, 0.01, 0.01, 0.1, False) # uwufier settings
 
 class mentiontotalk(commands.Cog):
 
@@ -41,7 +43,7 @@ class mentiontotalk(commands.Cog):
     return self.convo[id]
 
   def mentiontotalk(self, msg, user, id):
-    msg = msg.replace('<@1273602744028233809>', '')  # Main Bot
+    msg = msg.replace('<@1120326968609607690>', '')  # Main Bot
     msg = msg.replace('<@1208732989803204618>', '')  # DevTest Bot
     msg = 'user:' + str(user) + ' msg:' + msg
 
@@ -61,8 +63,8 @@ class mentiontotalk(commands.Cog):
         presence_penalty=0.42)
 
         # we are not using uwuipy anymore but its here incase yes happens
-        #assistant_message = uwu.uwuify(response.choices[0].message.content)
-        assistantmsg = response.choices[0].message.content
+        assistantmsg = uwu.uwuify(response.choices[0].message.content)
+        #assistantmsg = response.choices[0].message.content
     except Exception as e:
         logging.error(f"AI Complication Failed: {e}")
 
@@ -96,10 +98,10 @@ class mentiontotalk(commands.Cog):
       del self.convocount[id]
       del self.convo[id]
 
-  @commands.hybrid_command(name="talk", description="Talk to Miku using slash commands")
+  @commands.hybrid_command(name="talk", description="Talk to Trixie using slash commands")
   @app_commands.allowed_installs(guilds=True,users=True)
   @app_commands.allowed_contexts(guilds=True,dms=True,private_channels=True)
-  @app_commands.describe(message="The message you want to send to Miku")
+  @app_commands.describe(message="The message you want to send to Trixie")
   async def talk(self,ctx,message: str):
     await ctx.defer() 
     await ctx.send(self.mentiontotalk(message, ctx.author,str(ctx.author.id)))

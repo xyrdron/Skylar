@@ -17,7 +17,7 @@ bot = commands.Bot(command_prefix='*@#RH@(*U$YH*&HF@U#H', intents=intents)
 logging.basicConfig(level=logging.INFO,
   format='\033[1m %(asctime)s %(levelname)s \033[0m    %(message)s', 
   datefmt=Fore.LIGHTBLACK_EX+'%Y-%m-%d %H:%M:%S'+Fore.RESET)  
-logging.info(Fore.BLUE + f"Xyrdron Pty Ltd\nMikuBOT")
+logging.info(Fore.BLUE + f"Xyrdron Pty Ltd\nTrixie Project TX")
 
 # Bot Startup
 @bot.event
