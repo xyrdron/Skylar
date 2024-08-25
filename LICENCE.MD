@@ -1,4 +1,4 @@
-# MikuBOT Licence
+# Project TSX Licence
 > [!CAUTION]
 > Complete Licence fields and remove this notice
 
