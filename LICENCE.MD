@@ -1,4 +1,4 @@
-# Project TSX Licence
+# Project TX Licence
 > [!CAUTION]
 > Complete Licence fields and remove this notice
 
