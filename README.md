@@ -1,4 +1,8 @@
-# MikuBOT
-Hatsune Miku Discord Bot!
+# Trixie: Your Egirl Companion!
 
-i will populate this file more later lol
+> [!WARNING]
+> YES YES I KNOW THIS WAS SUPPOSED TO BE A HATSUNE MIKU DISCORD BOT
+> BUT I THINK EGIRL THEME WOULD HAVE A BETTER REACH
+> SO WE REBRANDED LMFAO
+
+> Project TX by Xyrdron Pty Ltd
