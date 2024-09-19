@@ -67,6 +67,7 @@ class mentiontotalk(commands.Cog):
         #assistantmsg = response.choices[0].message.content
     except Exception as e:
         logging.error(f"AI Complication Failed: {e}")
+        assistantmsg = 'It seems like im having some trouble compiling a response, please try again later and contact the devs if this persists.'
 
     self.appendMsg(assistantmsg, 'assistant', id)
     return assistantmsg
