@@ -26,9 +26,9 @@ class bottest(commands.Cog):
     await ctx.defer() 
     try:
       async with aiohttp.ClientSession() as session:
-          async with session.get(str(user1.avatar.url)) as response1: # type: ignore
+          async with session.get(str(user1.avatar)) as response1: # type: ignore
               user1_avatar = Image.open(io.BytesIO(await response1.read()))
-          async with session.get(str(user2.avatar.url)) as response2: # type: ignore
+          async with session.get(str(user2.avatar)) as response2: # type: ignore
               user2_avatar = Image.open(io.BytesIO(await response2.read()))
 
       # we make a image
