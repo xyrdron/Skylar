@@ -1,4 +1,4 @@
-# Project TX Licence
+# Project SKLR Licence
 > [!CAUTION]
 > Complete Licence fields and remove this notice
 
