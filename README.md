@@ -1,8 +1,4 @@
-# Trixie: Your Egirl Companion!
+# Skylar: Your Discord Egirl Companion!
+hi readme coming soon bye
 
-> [!WARNING]
-> YES YES I KNOW THIS WAS SUPPOSED TO BE A HATSUNE MIKU DISCORD BOT
-> BUT I THINK EGIRL THEME WOULD HAVE A BETTER REACH
-> SO WE REBRANDED LMFAO
-
-> Project TX by Xyrdron Pty Ltd
+> Project SKLR by Xyrdron Pty Ltd

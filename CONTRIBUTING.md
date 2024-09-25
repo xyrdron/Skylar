@@ -1,5 +1,5 @@
-# Contributing to MikuBOT
-MikuBOT is open source and anyone can contribute!
+# Contributing to Skylar
+Skylar is open source and anyone can contribute!
 ## How to contribute
 If you would like to contribute please fork the repo and make a pull request to the `dev` branch.
 Your PR will then be reviewed and merged if accepted.
